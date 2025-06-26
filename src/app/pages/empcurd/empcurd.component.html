@@ -1,1 +1,113 @@
-<p>empcurd works!</p>
+<div class="row">
+
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header bg-success text-white">
+        <h6 class="mb-0">Employee List</h6>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>Contact No</th>
+                <th>City</th>
+                <th>Address</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (item of employeeList; track $index){
+                <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.contactNo}}</td>
+                <td>{{item.city}}</td>
+                <td>{{item.address}}</td> 
+
+                 <td class="text-center ">
+                   <button class="btn btn-primary me-2" (click)="onEdit(item)">Edit</button>
+                   <button class="btn btn-danger max-2" (click)="onDelete(item.empId)" >Delete</button>
+                  </td>
+                </tr>
+              }
+          
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header bg-success text-white">
+        <h6 class="mb-0">New Employee</h6>
+      </div>
+      <div class="card-body">
+
+        <form [formGroup]="employeeForm">
+
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="" class="form-label">Name</label>
+              <input type="text" formControlName="name" class="form-control"  placeholder="Enter name">
+              <div class="text-danger">
+                @if(employeeForm.controls['name'].touched){
+                  @if(employeeForm.controls['name'].errors?.['required']){
+                    <span> Name is required</span>
+                  }
+                }
+              </div>
+
+            </div>
+            <div class="col-12">
+              <label for="" class="form-label">City</label>
+              <input type="text" formControlName="city" class="form-control"  placeholder="Enter city">
+            </div>
+            <div class="col-12">
+              <label for="" class="form-label">Contact No</label>
+              <input type="text" formControlName="contactNo" class="form-control"  placeholder="Enter contact number">
+            </div>
+            <div class="col-12">
+              <label for="" class="form-label">PinCode</label>
+              <input type="text" formControlName="pinCode" class="form-control"  placeholder="Enter pincode">
+              <div class="text-danger">
+                @if(employeeForm.controls['pinCode'].touched){
+                  @if(employeeForm.controls['pinCode'].errors?.['required']){
+                    <span> Name is required</span>
+                  }
+                   @if(employeeForm.controls['pinCode'].errors?.['minlength']){
+                    <span> Min 6 char required</span>
+                }
+              }
+              </div>
+            </div>
+            <div class="col-12">
+              <label for="" class="form-label">Address</label>
+              <textarea formControlName="address" class="form-control"  rows="2" placeholder="Enter address"></textarea>
+            </div>
+            
+            <div class="col-6 text-center">
+              <button type="button" class="btn btn-secondary w-100" (click)="this.reset()">Reset</button>
+            </div>
+
+            <div class="col-6 text-center">
+             @if(employeeForm.controls['empId'].value == '1'){
+
+              <button type="button" class="btn btn-success w-100" [disabled]="employeeForm.invalid" (click)="onSave()">Save Employee</button>
+             }@else{
+
+               <button type="button" class="btn btn-warning w-100"[disabled]="employeeForm.invalid" (click)="onUpdate()">Update Employee</button>
+
+             }
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
