@@ -4,15 +4,15 @@
     <a class="navbar-brand" routerLink="/dashboard">Employee Management</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" routerLink="/dashboard">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/profile">Profile</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/dashbord"routerLinkActive="active">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/empcurd"routerLinkActive="active">CURD</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/about"routerLinkActive="active">About</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contact"routerLinkActive="active">Contact</a></li>
       </ul>
      <button class="btn btn-outline-light ms-auto" (click)="logout()">Logout</button>
     </div>
   </div>
 </nav>
 
-
-  <router-outlet></router-outlet>
+ <router-outlet></router-outlet>
+  
