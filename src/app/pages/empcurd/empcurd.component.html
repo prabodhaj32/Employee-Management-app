@@ -10,7 +10,7 @@
           <table class="table table-bordered table-striped">
             <thead class="table-dark">
               <tr>
-                <th>Sr No</th>
+                <th>Index</th>
                 <th>Name</th>
                 <th>Contact No</th>
                 <th>City</th>
@@ -56,7 +56,7 @@
               <label for="" class="form-label">Name</label>
               <input type="text" formControlName="name" class="form-control"  placeholder="Enter name">
               <div class="text-danger">
-                @if(employeeForm.controls['name'].touched){
+                @if(employeeForm.controls['name'].touched){     <!-- validation part -->
                   @if(employeeForm.controls['name'].errors?.['required']){
                     <span> Name is required</span>
                   }
@@ -75,10 +75,11 @@
             <div class="col-12">
               <label for="" class="form-label">PinCode</label>
               <input type="text" formControlName="pinCode" class="form-control"  placeholder="Enter pincode">
+              <!-- validation -->
               <div class="text-danger">
-                @if(employeeForm.controls['pinCode'].touched){
+                @if(employeeForm.controls['pinCode'].touched){ 
                   @if(employeeForm.controls['pinCode'].errors?.['required']){
-                    <span> Name is required</span>
+                    <span> Cord is required</span>
                   }
                    @if(employeeForm.controls['pinCode'].errors?.['minlength']){
                     <span> Min 6 char required</span>

@@ -3,6 +3,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { DashbordComponent } from './pages/dashbord/dashbord.component';
 import { EmpcurdComponent } from './pages/empcurd/empcurd.component';
+import { EmployeesComponent } from './pages/employees/employees.component';
 
 export const routes: Routes = [
   {
@@ -19,8 +20,8 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'dashbord',
-        component: DashbordComponent,
+        path: 'employees',
+        component: EmployeesComponent,
       },
       {
         path: 'empcurd',

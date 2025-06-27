@@ -55,7 +55,7 @@ export class LoginComponent {
       const isUserFound =  users.find((m:any)=> m.userName == this.userLogin.userName && m.password == this.userLogin.password);
       if(isUserFound != undefined) {
 
-         this.router.navigateByUrl('dashbord')//nav dashbord
+         this.router.navigateByUrl('employees')//nav employees com
 
       } else {
         alert("User name or password is Wrong")

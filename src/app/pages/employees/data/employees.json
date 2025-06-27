@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "designation": "Developer",
+    "insuranceBalance": 200,
+    "rbtProgress": 80,
+    "icon": "https://ui-avatars.com/api/?name=+Dev"
+  },
+  {
+    "id": 2,
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "designation": "Designer",
+    "insuranceBalance": 1500,
+    "rbtProgress": 70,
+    "icon": "https://ui-avatars.com/api/?name=Jane+Smith"
+  },
+  {
+    "id": 3,
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "designation": "Manager",
+    "insuranceBalance": 200,
+    "rbtProgress": 10,
+    "icon": "https://ui-avatars.com/api/?name=Michael+Johnson"
+  },
+  {
+    "id": 4,
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "designation": "QA Engineer",
+    "insuranceBalance": 100,
+    "rbtProgress": 75,
+    "icon": "https://ui-avatars.com/api/?name=Emily+Davis"
+  },
+  {
+    "id": 5,
+    "firstName": "David",
+    "lastName": "Miller",
+    "designation": "Developer",
+    "insuranceBalance": 1300,
+    "rbtProgress": 85,
+    "icon": "https://ui-avatars.com/api/?name=David+Miller"
+  },
+  {
+    "id": 6,
+    "firstName": "Sarah",
+    "lastName": "Wilson",
+    "designation": "HR",
+    "insuranceBalance": 5000,
+    "rbtProgress": 10,
+    "icon": "https://ui-avatars.com/api/?name=+Dev"
+  },
+  {
+    "id": 7,
+    "firstName": "Chris",
+    "lastName": "Moore",
+    "designation": "Developer",
+    "insuranceBalance": 12,
+    "rbtProgress": 78,
+    "icon": "https://ui-avatars.com/api/?name=Chris+Moore"
+  },
+  {
+    "id": 8,
+    "firstName": "Anna",
+    "lastName": "Taylor",
+    "designation": "Designer",
+    "insuranceBalance": 1350,
+    "rbtProgress": 65,
+    "icon": "https://ui-avatars.com/api/?name=+Dev"
+  }
+  
+]
