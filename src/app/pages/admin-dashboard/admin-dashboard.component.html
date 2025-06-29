@@ -1,0 +1,7 @@
+<h2 style="text-align: center;">Admin-Dashboard</h2>
+
+<app-employee-table
+  [employeeList]="employees"
+  (edit)="handleEdit($event)"
+  (delete)="handleDelete($event)">
+</app-employee-table>

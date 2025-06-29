@@ -6,7 +6,7 @@
     "designation": "Developer",
     "insuranceBalance": 200,
     "rbtProgress": 80,
-    "icon": "https://ui-avatars.com/api/?name=+Dev"
+    "icon": "https://ui-avatars.com/api/?name=👨‍💻"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "designation": "Designer",
     "insuranceBalance": 1500,
     "rbtProgress": 70,
-    "icon": "https://ui-avatars.com/api/?name=Jane+Smith"
+    "icon": "https://ui-avatars.com/api/?name=🧑‍🔬"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "designation": "Manager",
     "insuranceBalance": 200,
     "rbtProgress": 10,
-    "icon": "https://ui-avatars.com/api/?name=Michael+Johnson"
+    "icon": "https://ui-avatars.com/api/?name=👨‍💻"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "designation": "QA Engineer",
     "insuranceBalance": 100,
     "rbtProgress": 75,
-    "icon": "https://ui-avatars.com/api/?name=Emily+Davis"
+    "icon": "https://ui-avatars.com/api/?name=👨‍💻"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "designation": "Developer",
     "insuranceBalance": 1300,
     "rbtProgress": 85,
-    "icon": "https://ui-avatars.com/api/?name=David+Miller"
+    "icon": "https://ui-avatars.com/api/?name=👨‍💻"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "designation": "HR",
     "insuranceBalance": 5000,
     "rbtProgress": 10,
-    "icon": "https://ui-avatars.com/api/?name=+Dev"
+    "icon": "https://ui-avatars.com/api/?name=🧑‍🔬"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "designation": "Developer",
     "insuranceBalance": 12,
     "rbtProgress": 78,
-    "icon": "https://ui-avatars.com/api/?name=Chris+Moore"
+    "icon": "https://ui-avatars.com/api/?name=🧑‍🔬"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "designation": "Designer",
     "insuranceBalance": 1350,
     "rbtProgress": 65,
-    "icon": "https://ui-avatars.com/api/?name=+Dev"
+    "icon": "https://ui-avatars.com/api/?name=👨‍💼"
   }
   
 ]

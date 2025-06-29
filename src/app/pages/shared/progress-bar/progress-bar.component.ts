@@ -16,7 +16,8 @@ export class ProgressBarComponent implements OnInit {
      @Input() progress: number = 0; //parent val > child com 
      @Input() firstName:string=''
     //chid val > parent clz use EventEmitter/progressClick
-    @Output() progressClick:EventEmitter<string>=new EventEmitter<string>();
+    
+     @Output() progressClick:EventEmitter<string>=new EventEmitter<string>();
      
    
 

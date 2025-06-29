@@ -6,7 +6,7 @@
     </div>
     <div class="card-body">
         <div class="row">
-            <div class="col-md-2">Description filter</div>
+            <div class="col-md-2">Designation filter</div>
             <div class="col-md-4">
                 <input type="text" [(ngModel)]="designationFilter" />
             </div>
@@ -29,10 +29,10 @@
                         </button>
                     </th>
                     <th>First Name</th>
-                    <th>last Name</th>
+                    <th>Last Name</th>
                     <th>Designation</th>
                     <th>Inshuarnce Balance</th>
-                    <th>RBT Progress</th>
+                    <th>Progress</th>
                 </tr>
             </thead> 
             <tbody>
@@ -46,9 +46,11 @@
                     <td>{{employee.firstName}}</td>
                     <td>{{employee.lastName}}</td>
                     <td>{{employee.designation}}</td>
-                  <td>{{ employee.insuranceBalance | currency:'LKR':'Rs.':'3.2-2'}}</td>
-                  <!-- <td>{{employee.rbtProgress}}</td> -->
+                    <td>{{ employee.insuranceBalance | currency:'LKR':'Rs.':'3.2-2'}}</td>
+
+                   <!-- <td>{{employee.rbtProgress}}</td> -->
                    <!-- //parent to child pass this val  & child to parent-->
+                  
                     <td><app-progress-bar 
                         [progress] = 'employee.rbtProgress'
                         [firstName] ='employee.firstName'

@@ -1,92 +1,85 @@
+
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeModel } from '../employee';
+import { EmployeeDataService } from '../../pages/shared/services/employee-data.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-empcurd',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './empcurd.component.html',
   styleUrls: ['./empcurd.component.css']
 })
-export class EmpcurdComponent  {
+export class EmpcurdComponent implements OnInit {
 
-  employeeForm: FormGroup = new FormGroup({});
-  employeeObj: EmployeeModel = new EmployeeModel();
+  employeeForm: FormGroup;
   employeeList: EmployeeModel[] = [];
- 
-  constructor(){
-    debugger;
-    this.createForm();
-    const oldData = localStorage.getItem("EmpData");
-    if(oldData != null){
-       const parseData = JSON.parse(oldData);
-       this.employeeList = parseData;
+  isUpdate = false;
 
-    }
+  constructor(private empService: EmployeeDataService) {
+    this.employeeForm = this.createForm();
   }
-  reset(){
-    this.employeeObj =new EmployeeModel();
-    this.createForm()
+  reset(): void {
+  this.employeeForm.reset();
+}
 
-  }
 
-  createForm() {
-    this.employeeForm = new FormGroup({
-      empId: new FormControl(this.employeeObj.empId),
-      name: new FormControl(this.employeeObj.name, [Validators.required] ),
-      city: new FormControl(this.employeeObj.city),
-      address: new FormControl(this.employeeObj.address),
-      contactNo: new FormControl(this.employeeObj.contactNo),
-      pinCode: new FormControl(this.employeeObj.pinCode,[Validators.required,Validators.minLength(6)]),
+  ngOnInit(): void {
+    this.empService.getList().subscribe(data => {
+      this.employeeList = data;
     });
   }
 
- onSave(){
-  debugger;
-   const oldData = localStorage.getItem("EmpData");
-   if(oldData != null){
-    const parseData = JSON.parse(oldData);
-    this.employeeForm.controls['empId'].setValue(parseData.length + 1);
-    this.employeeList.unshift(this.employeeForm.value);
-   }else{
-    this.employeeList.unshift(this.employeeForm.value);
-   }
-
-   localStorage.setItem("EmpData", JSON.stringify(this.employeeList));
-   this.reset()
-
-
- }
-
-  onEdit(item: EmployeeModel){
-  this.employeeObj = item;
-  this.createForm();
-
- }
-
- onUpdate(){
-  const record = this.employeeList.find(m=>m.empId == this.employeeForm.controls['empId'].value);
-  if(record != undefined ){
-    record.address=this.employeeForm.controls['address'].value;
-    record.name=this.employeeForm.controls['name'].value;
-    record.contactNo=this.employeeForm.controls['contactNo'].value;
-
-  }
-    localStorage.setItem("EmpData", JSON.stringify(this.employeeList));
-    this.reset()
-
- }
- onDelete(id: number){
-  const isDelete=confirm ("Are you sure want to Delete");
-  if(isDelete){
-    const index = this.employeeList.findIndex(m=> m.empId ==id);
-    this.employeeList.splice(index,1)
-    localStorage.setItem("EmpData", JSON.stringify(this.employeeList));
-
+  createForm(): FormGroup {
+    return new FormGroup({
+      empId: new FormControl(null),
+      name: new FormControl('', Validators.required),
+      city: new FormControl(''),
+      address: new FormControl(''),
+      contactNo: new FormControl(''),
+      pinCode: new FormControl('', [Validators.required, Validators.minLength(6)])
+    });
   }
 
+  resetForm() {
+    this.employeeForm.reset();
+    this.isUpdate = false;
+  }
 
- }
+  onSave() {
+    if (this.employeeForm.valid) {
+      this.empService.addEmployee(this.employeeForm.value);
+      this.resetForm();
+    }
+  }
 
+  onEdit(emp: EmployeeModel) {
+    this.employeeForm.setValue({
+      empId: emp.empId,
+      name: emp.name,
+      city: emp.city,
+      address: emp.address,
+      contactNo: emp.contactNo,
+      pinCode: emp.pinCode
+    });
+    this.isUpdate = true;
+  }
+
+  onUpdate() {
+    if (this.employeeForm.valid) {
+      this.empService.editEmployee(this.employeeForm.value);
+      this.resetForm();
+    }
+  }
+
+  onDelete(id: number) {
+    const confirmDelete = confirm("Are you sure want to delete?");
+    if (confirmDelete) {
+      this.empService.deleteEmployee(id);
+    }
+  }
 }
+
+

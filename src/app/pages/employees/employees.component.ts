@@ -23,7 +23,7 @@ export class EmployeesComponent {
     filteredEmployees: Employee[] = employees;
 
     showIcon:boolean =false;
-    message:string= ''; //c>P
+    message:string= ''; //C > P
 
 
   private _designationFilter:string='' //desfilter
@@ -51,7 +51,7 @@ export class EmployeesComponent {
         this.filteredEmployees = this.employees.filter(employee => employee.designation.includes(this.designationFilter))
     }
 
-    onMessageRecived(value:string){
+    onMessageRecived(value:string){ 
       this.message=value;
     }
     

@@ -1,18 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    
+
+    <!-- Brand -->
     <a class="navbar-brand" routerLink="/dashboard">Employee Management</a>
+
+    <!-- Nav Links -->
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" routerLink="/employees"routerLinkActive="active">Dashbord</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/empcurd"routerLinkActive="active">CURD</a></li>
-        <!-- <li class="nav-item"><a class="nav-link" routerLink="/about"routerLinkActive="active">About</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/contact"routerLinkActive="active">Contact</a></li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/employees" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/empcurd" routerLinkActive="active">CRUD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin-dashboard" routerLinkActive="active">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/hr-dashboard" routerLinkActive="active">HR</a>
+        </li>
       </ul>
-     <button class="btn btn-outline-light ms-auto" (click)="logout()">Logout</button>
+
+      <!-- Logout Button -->
+      <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+
     </div>
   </div>
 </nav>
 
- <router-outlet></router-outlet>
-  
+<!-- Router Outlet -->
+<router-outlet></router-outlet>
