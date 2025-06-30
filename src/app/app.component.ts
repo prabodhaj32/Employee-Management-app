@@ -1,21 +1,11 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import {RouterOutlet } from '@angular/router';
-import { EmpcurdComponent } from './pages/empcurd/empcurd.component';
-
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,ReactiveFormsModule],
+  standalone: true, 
+  imports: [RouterOutlet], //  import 
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] 
 })
-export class AppComponent {
-
-
-    
-  }
-  
-
-
-
+export class AppComponent {}

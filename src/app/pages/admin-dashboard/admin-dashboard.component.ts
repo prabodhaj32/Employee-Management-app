@@ -20,9 +20,9 @@ export class AdminDashboardComponent implements OnInit {
     this.empService.getList().subscribe(data => this.employees = data);
   }
 
-  handleEdit(emp: any) {
-    console.log('Edit from Admin:', emp);
-  }
+  // handleEdit(emp: any) {
+  //   console.log('Edit from Admin:', emp);
+  // }
 
   handleDelete(id: number) {
     this.empService.deleteEmployee(id);

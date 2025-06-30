@@ -20,16 +20,11 @@ export class HrDashboardComponent implements OnInit {
     this.empService.getList().subscribe(data => this.employees = data);
   }
 
-  handleEdit(emp: EmployeeModel) {
-    console.log('Edit from HR:', emp);
-    // Forward this data to form or modal
-  }
+  
 
   handleDelete(id: number) {
     this.empService.deleteEmployee(id);
   }
 
-  trackByEmpId(index: number, item: EmployeeModel) {
-    return item.empId;
-  }
+ 
 }
