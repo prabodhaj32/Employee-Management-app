@@ -18,10 +18,11 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class EmployeeTableComponent implements OnChanges {
   @Input() employeeList: any[] = [];
+
   @Output() edit = new EventEmitter<any>();
   @Output() delete = new EventEmitter<number>();
 
-  dataSource = new MatTableDataSource<any>();
+  dataSource = new MatTableDataSource<any>(); //table
   displayedColumns: string[] = ['index', 'name', 'contactNo', 'city', 'address', 'actions'];
 
   ngOnChanges(changes: SimpleChanges): void {

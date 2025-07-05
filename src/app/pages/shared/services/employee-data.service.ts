@@ -11,14 +11,14 @@ export class EmployeeDataService {
 
   employeeList$ = this.employeeList.asObservable();
 
-  constructor() {
+  constructor() { //load the employee list
     const data = localStorage.getItem('EmpData');
     if (data) {
       this.employeeList.next(JSON.parse(data));
     }
   }
 
-  private saveToStorage(data: EmployeeModel[]) {
+  private saveToStorage(data: EmployeeModel[]) {  //Save to Local Storage
     localStorage.setItem('EmpData', JSON.stringify(data));
     this.employeeList.next(data);
   }

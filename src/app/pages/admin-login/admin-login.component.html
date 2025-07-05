@@ -1,0 +1,13 @@
+<!-- admin-login.component.html -->
+<div class="login-container">
+  <h2>Admin Login</h2>
+  <form (submit)="login(); $event.preventDefault()">
+    <label for="username">Username:</label>
+    <input [(ngModel)]="username" name="username" id="username" required />
+
+    <label for="password">Password:</label>
+    <input [(ngModel)]="password" type="password" name="password" id="password" required />
+
+    <button type="submit">Login</button>
+  </form>
+</div>

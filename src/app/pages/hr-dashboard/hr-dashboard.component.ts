@@ -14,7 +14,7 @@ import { EmployeeTableComponent } from '../shared/employee-table/employee-table.
 export class HrDashboardComponent implements OnInit {
   employees: EmployeeModel[] = [];
 
-  constructor(private empService: EmployeeDataService) {}
+  constructor(private empService: EmployeeDataService) {} //access employee data 
 
   ngOnInit(): void {
     this.empService.getList().subscribe(data => this.employees = data);

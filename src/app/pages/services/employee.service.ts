@@ -7,8 +7,8 @@ import { Employee } from '../employee-list/employee.model';
   providedIn: 'root'
 })
 export class EmployeeService {
-                                                     // json-server
-  private apiUrl = 'http://localhost:3000/employees';
+                      
+  private apiUrl = 'http://localhost:3000/employees'; //URL for your backend API 
 
   constructor(private http: HttpClient) {}
 
@@ -22,7 +22,7 @@ export class EmployeeService {
     return this.http.get<Employee>(`${this.apiUrl}/${id}`);
   }
 
- addEmployee(employee: Omit<Employee, 'id'>): Observable<Employee> {
+ addEmployee(employee: Omit<Employee, 'id'>): Observable<Employee> { //POST new
   return this.http.post<Employee>(this.apiUrl, employee);
 }
 

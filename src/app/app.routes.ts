@@ -6,7 +6,8 @@ import { EmployeesComponent } from './pages/employees/employees.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { HrDashboardComponent } from './pages/hr-dashboard/hr-dashboard.component';
 import { EmployeeListComponent } from './pages/employee-list/employee-list.component';
-
+import { AuthGuard } from './auth.guard';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 export const routes: Routes = [
   {
     path: '',
@@ -20,6 +21,7 @@ export const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    
     children: [
       {
         path: 'employees',
@@ -29,8 +31,14 @@ export const routes: Routes = [
         path: 'empcurd',
         component: EmpcurdComponent,
       },
+       {
+        path: 'admin-login',
+        component: AdminLoginComponent,
+      },
+
       {
-        path: 'admin-dashboard', 
+        path: 'admin-dashboard',
+        canActivate: [AuthGuard], // Auth Gard use this 
         component: AdminDashboardComponent,
       },
       {

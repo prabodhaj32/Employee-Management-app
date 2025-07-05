@@ -1,7 +1,8 @@
 <h2 style="text-align: center;">Admin-Dashboard</h2>
-
+ <!-- parent to child -->
+<!--  Delete calls a method in the parent -->
+<button class="logout-btn" (click)="logout()">Logout</button>
 <app-employee-table
-  [employeeList]="employees"
-  
-  (delete)="handleDelete($event)">
+[employeeList]="employees" 
+(delete)="handleDelete($event)">
 </app-employee-table>
