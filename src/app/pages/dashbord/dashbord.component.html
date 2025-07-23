@@ -1,1 +1,76 @@
-<p>dashbord works!</p>
+<div class="position-relative p-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search Destinations"
+    (focus)="showDropdown = true"
+    (click)="showDropdown = true"
+    #searchInput
+  />
+
+  <div
+    class="dropdown-menu show w-100 shadow-lg mt-2"
+    *ngIf="showDropdown"
+    style="display: block; max-width: 650px"
+  >
+    <ul class="nav nav-tabs mb-3">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="activeTab === 'region'"
+          (click)="setActiveTab('region')"
+          href="#"
+          >Region</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="activeTab === 'transportation'"
+          (click)="setActiveTab('transportation')"
+          href="#"
+          >Transportation</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="activeTab === 'accommodation'"
+          (click)="setActiveTab('accommodation')"
+          href="#"
+          >Accommodation</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [class.active]="activeTab === 'interests'"
+          (click)="setActiveTab('interests')"
+          href="#"
+          >Interests</a
+        >
+      </li>
+    </ul>
+
+    <!-- Region Tab Content -->
+    <div *ngIf="activeTab === 'region'" class="row g-3 px-3">
+      <div class="col-4" *ngFor="let region of regionList">
+        <div class="card h-100 text-center">
+          <img
+            [src]="region.image"
+            class="card-img-top"
+            alt="{{ region.name }}"
+          />
+          <div class="card-body p-2">
+            <p class="card-text small">{{ region.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder Content for other tabs -->
+    <div *ngIf="activeTab !== 'region'" class="p-3">
+      <p class="text-muted">Content for "{{ activeTab }}" will appear here.</p>
+    </div>
+  </div>
+</div>

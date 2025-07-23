@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <h2>User Registration</h2>
+
+  <form (ngSubmit)="onSubmit()" #registrationForm="ngForm" novalidate>
+    <div class="form-group mt-3">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        [(ngModel)]="user.name"
+        required
+        #nameModel="ngModel"
+      />
+      <div class="text-danger" *ngIf="nameModel.invalid && nameModel.touched">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        [(ngModel)]="user.email"
+        required
+        email
+        #emailModel="ngModel"
+      />
+      <div class="text-danger" *ngIf="emailModel.invalid && emailModel.touched">
+        Valid email is required.
+      </div>
+    </div>
+
+    <!-- Add more form fields as needed -->
+
+    <div class="mt-4">
+      <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">
+        Register
+      </button>
+    </div>
+  </form>
+</div>

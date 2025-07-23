@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-
     <!-- Brand -->
     <a class="navbar-brand" routerLink="/dashboard">Employee Management</a>
 
@@ -8,26 +7,88 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/employees" routerLinkActive="active">Dashboard</a>
+          <a class="nav-link" routerLink="/employees" routerLinkActive="active"
+            >Dashboard</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/empcurd" routerLinkActive="active">CRUD</a>
+          <a class="nav-link" routerLink="/empcurd" routerLinkActive="active"
+            >CRUD</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/admin-dashboard" routerLinkActive="active">Admin</a>
+          <a
+            class="nav-link"
+            routerLink="/admin-dashboard"
+            routerLinkActive="active"
+            >Admin</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/hr-dashboard" routerLinkActive="active">HR</a>
+          <a
+            class="nav-link"
+            routerLink="/hr-dashboard"
+            routerLinkActive="active"
+            >HR</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/employee-list" routerLinkActive="active">EMP LIST</a>
+          <a
+            class="nav-link"
+            routerLink="/employee-list"
+            routerLinkActive="active"
+            >EMP LIST</a
+          >
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/dashboard"
+            routerLinkActive="active"
+            >Dashbord</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/TEST"
+            routerLinkActive="active"
+            >TEST</a
+          >
+        </li>
+        <li class="nav-item dropdown" [class.show]="dropdownOpen" (mouseleave)="dropdownOpen = false">
+  <a class="nav-link" href="#" (click)="toggleDropdown()" role="button" routerLink="/employees">
+    DropDown
+  </a>
+  
+  <div class="dropdown-menu" [class.show]="dropdownOpen">
+    <a class="dropdown-item" (click)="openSettingsModal()">User Settings</a>
+    <a class="dropdown-item" routerLink="/user-registration">User Register</a>
+   <!-- <a class="dropdown-item" (click)="openRegistrationModal()">User Register</a> -->
+</div>
+
+<!-- Popup Modal forms-->
+<!-- <app-user-registration
+  *ngIf="registrationModalOpen"
+  [visible]="true"
+  (closeModal)="closeRegistrationModal()">
+</app-user-registration> -->
+
+<app-user-settings
+  *ngIf="settingsModalOpen"
+  [visible]="true"
+  (closeModal)="closeSettingsModal()">
+</app-user-settings>
+  
+</li>
       </ul>
 
       <!-- Logout Button -->
-      <button mat-raised-button color="primary" (click)="logout()">Logout</button>
-
+      <button mat-raised-button color="primary" (click)="logout()">
+        Logout
+      </button>
     </div>
+
   </div>
 </nav>
 

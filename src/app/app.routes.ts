@@ -8,6 +8,12 @@ import { HrDashboardComponent } from './pages/hr-dashboard/hr-dashboard.componen
 import { EmployeeListComponent } from './pages/employee-list/employee-list.component';
 import { AuthGuard } from './auth.guard';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+
+import { UserRegistrationComponent } from './pages/shared/user-registration/user-registration.component';
+import { UserSettingsComponent } from './pages/shared/user-settings/user-settings.component';
+import { DashbordComponent } from './pages/dashbord/dashbord.component';
+import { TESTComponent } from './pages/test/test.component';
+
 export const routes: Routes = [
   {
     path: '',
@@ -46,8 +52,24 @@ export const routes: Routes = [
         component: HrDashboardComponent,
       },
       {
+        path: 'dashboard', 
+        component: DashbordComponent,
+      },
+      {
+        path: 'TEST', 
+        component: TESTComponent,
+      },
+      {
         path: 'employee-list', 
         component: EmployeeListComponent,
+      },
+      {
+        path: 'user-settings', //dropdown
+        component: UserSettingsComponent,
+      },
+      {
+        path: 'user-registration', //dropdown
+        component: UserRegistrationComponent,
       },
     ],
   },

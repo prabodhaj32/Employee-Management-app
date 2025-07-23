@@ -1,0 +1,57 @@
+.header_filter {
+  padding: 10px;
+}
+
+.filter-card {
+  position: relative;
+}
+
+.filter-card__dropdown {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+  z-index: 1000;
+}
+
+.filter-card__dropdown_overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.filter-card:hover .filter-card__dropdown {
+  display: block;
+}
+
+.tab-content .flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-lg-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.relative {
+  position: relative;
+}
+
+label {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+
+label img {
+  width: 100%;
+  height: auto;
+}
+
+label span {
+  display: block;
+}

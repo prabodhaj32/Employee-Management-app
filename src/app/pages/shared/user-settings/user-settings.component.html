@@ -1,0 +1,86 @@
+<div class="modal fade show d-block" tabindex="-1" role="dialog" *ngIf="visible">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">User Settings</h5>
+        
+          
+       
+      </div>
+
+      
+      <div class="modal-body">
+        <form #userSettingsForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+      
+          <div class="form-group mt-3">
+            <label for="currency">Currency</label>
+            <select class="form-select" id="currency" name="currency"
+            [(ngModel)]="settings.currency"
+            required>
+            
+               <option value="USD">USD </option>
+               <option value="LKR">LKR</option>
+               <option value="EUR">EUR</option>
+               </select>
+           </div>
+
+           
+          <div class="form-group mt-3">
+            <label for=" language"> Language</label>
+            <select class="form-select" id="language" name="language"
+            [(ngModel)]="settings. language"
+            required>
+            
+               <option value="English">English </option>
+               <option value="Sinhala">Sinhala</option>
+               <option value="Tamil">Tamil</option>
+               </select>
+           </div>
+
+
+           <div class="mt-4">
+            <label class="form-label d-block">Notification Settings</label>
+
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="emailNotif"
+                name="emailNotif"
+                [(ngModel)]="settings.notification.email"
+              />
+              <label for="emailNotif" class="form-check-label">Email</label>
+            </div>
+
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="smsNotif"
+                name="smsNotif"
+                [(ngModel)]="settings.notification.sms"
+              />
+              <label for="smsNotif" class="form-check-label">SMS</label>
+            </div>
+
+             
+          </div>
+
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <button
+          class="btn btn-primary"
+          [disabled]="userSettingsForm.invalid"
+          (click)="onSubmit()">
+          Save
+        </button>
+        <button class="btn btn-secondary" (click)="close()">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</div>
